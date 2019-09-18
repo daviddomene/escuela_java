@@ -5,22 +5,49 @@ package Ejemplojava;
  * @author David Domene
  */
 public class Coche {
+    
+    public static final int CAPACIDAD_DEPOSITO = 60;
 
     private final byte numRuedas;
-    private String marca;
-    private int capacidadDeposito;
-    private boolean esGasolina;
+    private final String marca;
+    //private final int capacidadDeposito;
+    private final boolean esGasolina;
     private double nivelDeposito;
     private boolean arrancado;
+    private TipoColor color;
+    //private String color;
+    private final TipoCarburante carburante;
 
-    public Coche(String marca, int capacidadDeposito, boolean esGasolina) {
+    public Coche(String marca, boolean esGasolina, TipoColor color, TipoCarburante carburante) {
         this.numRuedas = 4;
         this.marca = marca;
-        this.capacidadDeposito = capacidadDeposito;
         this.esGasolina  = esGasolina;
+        this.color = color;
+        this.carburante = carburante;
+        
     }
     
+    public Coche(String marca, boolean esGasolina, String color, TipoCarburante carburante) {
+        this.numRuedas = 4;
+        this.marca = marca;
+        this.esGasolina  = esGasolina;
+        /*switch(color){
+            case "ROJO": this.color = TipoColor.ROJO; break;
+        }*/
+        this.color = TipoColor.valueOf(color.toUpperCase());
+        this.carburante = carburante;
+        
+    }
 
+    public void setColor(TipoColor color) {
+        this.color = color;
+    }
+
+    public TipoCarburante getCarburante() {
+        return carburante;
+    }
+    
+   
     
     public double getNivelDeposito(){  
         return nivelDeposito;
@@ -28,10 +55,6 @@ public class Coche {
 
     public byte getNumRuedas() {
         return numRuedas;
-    }
-
-    public int getCapacidadDeposito() {
-        return capacidadDeposito;
     }
 
     public boolean isEsGasolina() {
@@ -53,8 +76,8 @@ public class Coche {
         if(cantidad > 0)    
         this.nivelDeposito += cantidad;
         
-        if(nivelDeposito > capacidadDeposito)
-            nivelDeposito = capacidadDeposito;
+        if(nivelDeposito > CAPACIDAD_DEPOSITO)
+            nivelDeposito = CAPACIDAD_DEPOSITO;
     }
     
     
@@ -76,7 +99,7 @@ public class Coche {
     }
     
     public String toString(){
-        return "coche " + marca + " nivel " + nivelDeposito;
+        return "coche " + marca + " nivel " + nivelDeposito + " color: " + color;
     }
 
     public String getMarca() {

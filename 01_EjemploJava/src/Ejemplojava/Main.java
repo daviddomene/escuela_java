@@ -16,19 +16,15 @@ public class Main {
      */
     public static void main(String[] args) {
         System.out.println("Empezamos POO");
-        Coche miCoche = new Coche("citroen", 60, true);
+        Coche miCoche = new Coche("citroen", true, "roJO", TipoCarburante.GASOLINA);
 
-        //miCoche.marca = "Citroen";
-        //miCoche.capacidadDeposito = 60;
-        //miCoche.esGasolina = true;
-        //miCoche.numRuedas = 4;
+
         miCoche.setArrancado(true);
         miCoche.echarCarburante(50.0f);
 
         System.out.println("Marca: " + miCoche.getMarca());
-        //vaciarDeposito(miCoche);
 
-        System.out.println("Capacidad deposito " + miCoche.getCapacidadDeposito());
+        System.out.println("Capacidad deposito " + miCoche.CAPACIDAD_DEPOSITO);
         System.out.println("¿Es Gasolina? " + miCoche.isEsGasolina());
         System.out.println("Numero de ruedas: " + miCoche.getNumRuedas());
         System.out.println("Nivel de Deposito: " + miCoche.getNivelDeposito());
