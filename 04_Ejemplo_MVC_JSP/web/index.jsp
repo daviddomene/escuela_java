@@ -20,11 +20,11 @@
                 </tr>
                 <tr> 
                     <td>Email</td> 
-                    <td><input name='email' id='email' typee='text' /></td> 
+                    <td><input name='email' id='email' type='text' /></td> 
                 </tr>
                 <tr> 
                     <td>pass</td> 
-                    <td><input name='pass' id='pass' type='text' /></td> 
+                    <td><input name='pass' id='pass' type='pass' /></td> 
                 </tr>
             </table> 
             <input type='submit' value='enviar'> 
