@@ -18,6 +18,14 @@
                     <td>Edad</td> 
                     <td><input name='edad' id='edad' type='number' /></td> 
                 </tr>
+                <tr> 
+                    <td>Email</td> 
+                    <td><input name='email' id='email' typee='text' /></td> 
+                </tr>
+                <tr> 
+                    <td>pass</td> 
+                    <td><input name='pass' id='pass' type='text' /></td> 
+                </tr>
             </table> 
             <input type='submit' value='enviar'> 
         </form>
@@ -32,6 +40,13 @@
                 <tr> 
                     <td>Edad</td> 
                     <td><input name='edad' id='edad' type='number' /></td> 
+                </tr>
+                <td>Email</td> 
+                    <td><input name='email' id='email' typee='text' /></td> 
+                </tr>
+                <tr> 
+                    <td>pass</td> 
+                    <td><input name='pass' id='pass' type='text' /></td> 
                 </tr>
             </table> 
             <input type='submit' value='enviar'> 
