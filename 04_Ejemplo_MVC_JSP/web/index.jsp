@@ -46,7 +46,7 @@
                 </tr>
                 <tr> 
                     <td>pass</td> 
-                    <td><input name='pass' id='pass' type='text' /></td> 
+                    <td><input name='pass' id='pass' type='pass' /></td> 
                 </tr>
             </table> 
             <input type='submit' value='enviar'> 
