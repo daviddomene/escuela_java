@@ -27,7 +27,7 @@ public class ServicioPersona {
     }
     private ArrayList<Persona> personas;
 
-    public Persona addPersonas(String nombre, String edad)
+    public Persona addPersonas(String nombre, String edad, String email, String pass)
         throws NumberFormatException, IOException, IllegalArgumentException {        
         if (nombre.equals("")) {
             throw new IllegalArgumentException("El nombre es vacio");
@@ -42,7 +42,7 @@ public class ServicioPersona {
             }
             else
             {
-                Persona p = new Persona(nombre, intEdad);
+                Persona p = new Persona(nombre, intEdad, email, pass);
                 personas.add(p);
                 return p;
             }
