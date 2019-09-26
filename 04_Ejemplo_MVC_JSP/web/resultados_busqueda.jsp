@@ -21,6 +21,10 @@
         <input readonly value="<%= p.getNombre() %>">
         <label for="edad">Edad: </label>
         <input readonly value="<%= p.getEdad() %>">
+        <label email="email">Email </label>
+        <input readonly value="<%= p.getEmail() %>">
+        <label type="pass">Pass: </label>
+        <input readonly value="<%= p.getPass() %>">
         <% }
         else{
         %>
