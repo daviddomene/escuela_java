@@ -24,7 +24,7 @@
                 </tr>
                 <tr> 
                     <td>pass</td> 
-                    <td><input name='pass' id='pass' type='pass' /></td> 
+                    <td><input name='pass' id='pass' type='password' /></td> 
                 </tr>
             </table> 
             <input type='submit' value='enviar'> 
@@ -46,7 +46,7 @@
                 </tr>
                 <tr> 
                     <td>pass</td> 
-                    <td><input name='pass' id='pass' type='pass' /></td> 
+                    <td><input name='pass' id='pass' type='password' /></td> 
                 </tr>
             </table> 
             <input type='submit' value='enviar'> 
