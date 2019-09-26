@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="unDiv">TODO write content</div>
+        <input type="text" id="miCajaTexto" name="miCajaTexto">
+        <button id="idBoton" value="pulsar" onclick="pulsar()" >pulsar</button>
+        <button id="idBoton2" value="pulsar">Otro boton</button>
+        <script>
+            
+            
+            document.getElementById("unDiv");
+            unDiv.style = "background-color: red";
+            unDiv.setAttribute("style", "background-color: blue");
+            var parrafo = document.createElement("p");
+            let texto = document.createTextNode("Texto en el parrafo");
+            parrafo.appendChild(texto);
+            unDiv.appendChild(parrafo);
+            document.getElementById("idBoton2").addEventListener("click", pulsar);
+            function pulsar(){
+                textoCaja = document.getElementById("miCajaTexto").value;
+                alert("En la caja hay " + textoCaja);
+            }
+            
+            
+            
+        </script>
+        
+        
+    </body>
+</html>

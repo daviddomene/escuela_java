@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            
+            var valor1 = new Object();
+            var valor2 = {
+                "dni" : "34564423Q",
+                "nombre" : "Juan",
+                "edad" : 34,
+                "nacimiento" : new Date()
+            };//Noenclatura JSON
+            
+            var persona = new Object();
+            persona.dni = "34564423Q";
+            persona.nombre = "Juan";
+            persona.edad = 34;
+            persona.nacimiento = new Date();
+            //window.alert("Info persona\nNombre: " + persona.nombre + "\nEdad: " + persona.edad + " \nDNI: " + persona.dni);
+            //window.alert("Info persona 2\nNombre: " + valor2.nombre + "\nEdad: " + valor2.edad + " \nDNI: " + valor2.dni);
+        
+        
+            var coche = new Object();
+            
+            coche.ruedas = 4;
+            coche.color = "rojo";
+            coche.marca = "seat";
+            coche.nivelDeposito = 60;
+            
+            alert("INFORMACION COCHE\n"
+                    + "El coche con marca: " + coche.marca
+                    + "\ncolor: " + coche.color
+                    + "\nruedas: " + coche.ruedas
+                    + "\nnivel deposito: " + coche.nivelDeposito);
+            
+            var coche2 = {
+                ruedas : 4,
+                "marca" : "seat",
+                "color" : "verde",
+                "nivel deposito" : 60
+                
+            };
+            alert("INFORMACION COCHE\n"
+                    + "El coche con marca: " + coche2.marca
+                    + "\ncolor: " + coche2.color
+                    + "\nruedas: " + coche2.ruedas
+                    + "\nnivel deposito: " + coche2.nivelDeposito);
+        
+        
+        </script>
+    </body>
+</html>

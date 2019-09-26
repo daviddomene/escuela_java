@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+        <script>
+
+            var Coche = function (matricula, marca) {
+                this.matricula = matricula;
+                this.marca = marca;
+                variableGlobal = "EXISTE";
+
+            };
+            Coche.prototype.arrancar = function () {
+                document.write("<p>Arranca " + this.marca + "</p>");
+            };
+
+            var miCoche = new Coche("432543-ZFF", "seat");
+            document.write("<p>" + miCoche.marca + "</p>");
+            miCoche.arrancar();
+            
+            var miCocheFinSemana = {
+                matricula : "",
+                marca : "una",
+                autoconduccion : function(){
+                    document.write("<p>Dime donde voy</p>");
+                }
+            };
+            miCocheFinSemana.autoconduccion();
+
+        </script>
+    </body>
+</html>
