@@ -37,8 +37,6 @@ public class Persona {
     public void setPass(String pass) {
         this.pass = pass;
     }
-
-    
     
     
     public String getNombre() {
@@ -55,6 +53,10 @@ public class Persona {
 
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+    
+    public boolean IgualMail(String nombre){
+        return this.email.equals(email);
     }
 
 }

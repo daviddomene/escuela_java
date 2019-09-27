@@ -23,44 +23,66 @@ public class ControladorPersonasServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nombre = request.getParameter("nombre");
-        //String edad = request.getParameter("edad");
-        
-        Persona p = ServicioPersona.getInstancia().getPersona(nombre);
-        request.getSession().setAttribute("resultadoBusqueda", p);
-        request.getRequestDispatcher("resultados_busqueda.jsp").forward(request, response);
-        
+
+        try {
+            String email = request.getParameter("email");
+            //String edad = request.getParameter("edad");
+
+            Persona p = ServicioPersona.getInstancia().getPersona(email);
+            request.getSession().setAttribute("resultadoBusqueda", p);
+            request.getRequestDispatcher("resultados_busqueda.jsp").forward(request, response);
+        } catch (NumberFormatException ex) {
+            request.getSession().setAttribute("mensajeError", "Error numerico" + ex.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+        } catch (IllegalArgumentException e) {
+            request.getSession().setAttribute("mensajeError", "mensaje error generico: " + e.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+        } catch (Exception ex) {
+            request.getSession().setAttribute("mensajeError", "mensaje error generico: " + ex.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+        }
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String nombre = request.getParameter("nombre");
         String edad = request.getParameter("edad");
         String email = request.getParameter("email");
         String pass = request.getParameter("pass");
-        
+        String metodoF = request.getParameter("metodo");
         try {
-            Persona p = ServicioPersona.getInstancia().addPersonas(nombre, edad, email, pass);
-        if (p == null) {
-            request.getRequestDispatcher("error.jsp").forward(request, response);
-        } else {
-            request.getRequestDispatcher("exito.jsp").forward(request, response);
-        }
-        }
-        catch (NumberFormatException ex) {
+            Persona p;
+            if ("delete".equals(metodoF)) {
+                boolean per = ServicioPersona.getInstancia().deleteP(nombre);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+
+            } else if ("update".equals(metodoF)) {
+                ServicioPersona.getInstancia().updatePersonas(nombre, edad, email, pass);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            } else if ("add".equals(metodoF)) {
+                p = ServicioPersona.getInstancia().addPersonas(nombre, edad, email, pass);
+                if (p == null) {
+                    request.getRequestDispatcher("error.jsp").forward(request, response);
+                } else {
+                    request.getRequestDispatcher("exito.jsp").forward(request, response);
+                }
+            } else if ("nada".equals(metodoF)) {
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
+        } catch (NumberFormatException ex) {
             request.getSession().setAttribute("mensajeError", "Error numerico" + ex.getMessage());
             request.getRequestDispatcher("error.jsp").forward(request, response);
-        }
-        catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             request.getSession().setAttribute("mensajeError", "mensaje error generico: " + e.getMessage());
             request.getRequestDispatcher("error.jsp").forward(request, response);
-        }      
-        catch (Exception ex){
+        } catch (Exception ex) {
             request.getSession().setAttribute("mensajeError", "mensaje error generico: " + ex.getMessage());
             request.getRequestDispatcher("error.jsp").forward(request, response);
         }
+
     }
 
 }

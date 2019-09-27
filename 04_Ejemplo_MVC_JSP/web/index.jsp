@@ -28,29 +28,18 @@
                 </tr>
             </table> 
             <input type='submit' value='enviar'> 
+            <input type="hidden" name="metodo" value="add">
         </form>
-        <h1>Ejemplo MVCcon JSP y Servlet</h1>
         <h2>Buscar personas</h2>
         <form name='form2' method='GET' action='personas.do'>
             <table border='1'> 
                 <tr> 
-                    <td>Nombre</td> 
-                    <td><input name='nombre' id='nombre' type='text' /></td> 
+                    <td>Email</td> 
+                    <td><input name='email' id='email' type='text' /></td>
                 </tr> 
-                <tr> 
-                    <td>Edad</td> 
-                    <td><input name='edad' id='edad' type='number' /></td> 
-                </tr>
-                <td>Email</td> 
-                    <td><input name='email' id='email' typee='text' /></td> 
-                </tr>
-                <tr> 
-                    <td>pass</td> 
-                    <td><input name='pass' id='pass' type='pass' /></td> 
-                </tr>
             </table> 
-            <input type='submit' value='enviar'> 
+            <input type='submit' value='buscar'>
+            <input type="hidden" name="metodo" value="nada">
         </form>
-        
     </body>
 </html>
