@@ -24,7 +24,7 @@
                 </tr>
                 <tr> 
                     <td>pass</td> 
-                    <td><input name='pass' id='pass' type='pass' /></td> 
+                    <td><input name='pass' id='pass' type='password' /></td> 
                 </tr>
             </table> 
             <input type='submit' value='enviar'> 
@@ -37,6 +37,20 @@
                     <td>Email</td> 
                     <td><input name='email' id='email' type='text' /></td>
                 </tr> 
+<<<<<<< HEAD
+=======
+                <tr> 
+                    <td>Edad</td> 
+                    <td><input name='edad' id='edad' type='number' /></td> 
+                </tr>
+                <td>Email</td> 
+                    <td><input name='email' id='email' typee='text' /></td> 
+                </tr>
+                <tr> 
+                    <td>pass</td> 
+                    <td><input name='pass' id='pass' type='password' /></td> 
+                </tr>
+>>>>>>> 6f2ddb3afc799d5b0842ada978c980c32a10873b
             </table> 
             <input type='submit' value='buscar'>
             <input type="hidden" name="metodo" value="nada">
