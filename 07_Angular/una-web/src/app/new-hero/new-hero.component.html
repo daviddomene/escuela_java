@@ -1,0 +1,10 @@
+<div>
+    <h2>Añadir nuevo Heroe</h2>
+        <label for="id">Id: </label>
+        <input type="number" [(ngModel)] = "newId" name="id" id="idHero"><br/>
+        <label for="nombre">Nombre: </label>
+        <input [(ngModel)]="newName" type="text"><br/>
+        <label for="nombre">Image src: </label>
+        <input [(ngModel)]="newFileSrc" type="text"><br/>
+        <input type="button" value="añadir" (click)="heroSrv.addHero({id: newId, name: newName, url: newFileSrc})" />
+</div>
